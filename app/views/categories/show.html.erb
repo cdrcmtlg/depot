@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+
+
+<% @products.each do |product| %>
+  <li>
+    <%= product.title %>
+  </li>
+<% end %>

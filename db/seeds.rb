@@ -1,14 +1,6 @@
-#---
-# Excerpted from "Agile Web Development with Rails",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material,
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose.
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
+
 # encoding: utf-8
 Product.delete_all
-
 Product.create!(title: 'CoffeeScript',
   description: 
     %{<p>
@@ -19,9 +11,9 @@ Product.create!(title: 'CoffeeScript',
 	while writing clearer, cleaner, and safer code.
       </p>},
   image_url:   'cs.jpg',    
-  price: 36.00)
-
-
+  price: 36.00,
+  categories: 'Essay')
+# . . .
 Product.create!(title: 'Programming Ruby 1.9 & 2.0',
   description:
     %{<p>
@@ -30,7 +22,9 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0',
         you should add Ruby to your toolbox.
       </p>},
   image_url: 'ruby.jpg',
-  price: 49.95)
+  price: 49.95,
+  categories: 'Legend')
+# . . .
 
 Product.create!(title: 'Rails Test Prescriptions',
   description: 
@@ -43,4 +37,37 @@ Product.create!(title: 'Rails Test Prescriptions',
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
   image_url: 'rtp.jpg',
-  price: 34.95)
+  price: 34.95,
+  categories: 'Mystery')
+
+# 20.times do 
+#   Product.create!(title: Faker::Commerce.product_name,
+#                   description: Faker::Lorem.paragraph,
+#                   image_url: 'rtp.jpg',
+#                   price: Faker::Commerce.price)
+#   end
+
+User.delete_all
+ 
+User.create!(name: "user",
+            email: 'user@gmail.com',
+            password: 'useruser',
+            password_confirmation: 'useruser') 
+  
+User.create!(name: "admin",
+            email: 'admin@gmail.com',
+            password: 'adminadmin',
+            password_confirmation: 'adminadmin',
+            admin: true)
+            
+            
+Category.delete_all
+
+# 5.times do
+#   Category.create!(name: Faker::Book.genre)
+# end
+Category.create!(name: "Essay")
+Category.create!(name: "Legend")
+Category.create!(name: "Suspense/Thriller")
+Category.create!(name: "Mythopeia")
+Category.create!(name: "Mystery")
