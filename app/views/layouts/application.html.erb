@@ -34,14 +34,15 @@
         <li><%= link_to 'Contact', '#' %></li>
       </ul>
 
-      <% if session[:user_id] %>
-        <ul>
+     <% if user_signed_in? %>
+          
           <li><%= link_to 'Orders',   orders_path   %></li>
           <li><%= link_to 'Products', products_path %></li>
           <li><%= link_to 'Users',    users_path    %></li>
-        </ul>
-        <%= button_to 'Logout', logout_path, method: :delete   %>
-      <% end %>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+     <% else %>
+      <li><%= link_to('Login', new_user_session_path)  %>  </li>
+     <% end %>
       
       
       <% @categories.each do | category | %>
