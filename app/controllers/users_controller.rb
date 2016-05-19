@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @categories = Category.all
     @users = User.order(:name)
   end
 
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @categories = Category.all
     @user = User.new
   end
 

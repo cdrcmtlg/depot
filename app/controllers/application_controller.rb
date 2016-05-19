@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :set_i18n_locale_from_params
   before_action :authenticate_user!, :only => [:new, :update, :edit, :destroy]
+  before_action :set_categories
   # ...
   # before_action :authorize
   # Prevent CSRF attacks by raising an exception.
@@ -39,5 +40,9 @@ class ApplicationController < ActionController::Base
 
     def default_url_options
       { locale: I18n.locale }
+    end
+    
+    def set_categories
+      @categories = Category.all
     end
 end

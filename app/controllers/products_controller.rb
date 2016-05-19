@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    @categories = Category.all
     @products = Product.all
     respond_to do |format|
       format.html
@@ -19,6 +20,7 @@ class ProductsController < ApplicationController
 
   # GET /products/new
   def new
+    @categories = Category.all
     @product = Product.new
   end
 
@@ -94,6 +96,6 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white
     # list through.
     def product_params
-      params.require(:product).permit(:title, :description, :image_url, :price)
+      params.require(:product).permit(:title, :description, :image_url, :price, :category)
     end
 end
