@@ -1,10 +1,14 @@
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
 <div class="container">
 <h1><%= t('.title_html') %></h1>
 <br>
+
+        <%= form_tag('/search', method: :get) do %>
+          <%= text_field_tag :search %>
+          <%= submit_tag 'Search' %>
+        <% end %>
+
 <%= will_paginate @products, class: 'col-md-offset-3' %>
+
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>

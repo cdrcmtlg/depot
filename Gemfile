@@ -41,7 +41,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'rails-simple-search'
 #START:capistrano
 # Use Capistrano for deployment
 #START_HIGHLIGHT

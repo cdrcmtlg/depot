@@ -30,9 +30,11 @@
   </div>
   
   <div class="field">
-    <%= f.label :category %><br>
-    <%= collection_select(:book,:category_id,Category.all,:id,:name) %>
+    <%= f.label :categories %><br>
+    <%= f.select :categories, Category.pluck(:name), selected: f.object.categories %>
+    
   </div>
+  <%= @product.categories %>
   
   <div class="actions">
     <%= f.submit %>

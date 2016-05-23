@@ -99,6 +99,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.4)
       sprockets-rails (~> 2.0)
+    rails-simple-search (0.9.9)
     railties (4.1.4)
       actionpack (= 4.1.4)
       activesupport (= 4.1.4)
@@ -163,6 +164,7 @@ DEPENDENCIES
   jquery-ui-rails
   mysql2
   rails (= 4.1.4)
+  rails-simple-search
   rvm-capistrano
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
